@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Aluno - Preview</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 font-inter">
+
+    <div class="dashboard-container mx-auto bg-white shadow-xl overflow-hidden flex flex-col">
+        <header class="p-6 border-b border-gray-100 bg-white sticky top-0 z-10">
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">Dashboard do Projeto</h1>
+            
+            <div class="flex flex-col gap-3 sm:flex-row">
+                <a href="https://drive.google.com/file/d/16N-VRGPXOAdbclxXaOdXFcXOLqa532h8/view?usp=sharing" target="_blank">
+                    <button class="btn-primary w-full flex items-center justify-center gap-2 py-4 rounded-xl font-semibold shadow-lg transition-all">
+                        <span>Ver passo a passo do projeto</span>
+                    </button>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Z012-Ok_5zw&list=PL93odPXOdOT5M5P-FE2HyUXqYXLaETj9Y&index=11&gad_source=2&gad_campaignid=23435869384&wbraid=CloKCQiA7rDMBhDvARJJAG5JuIA21VpQz_wuQEb-T-9ddi5HTvolZaaVfOgVY5tjPS6v6jWAQgCp6xkcRcYL_5rfuzN8xxew2QkwOA1pwq3nknaJvfuzjhoCvQw" target="_blank">
+                    <button class="btn-primary w-full flex items-center justify-center gap-2 py-4 rounded-xl font-semibold shadow-lg transition-all">
+                    <span>Ver vídeo aula</span>
+                    </button>
+                </a>
+                
+            </div>
+        </header>
+
+        <main class="flex-grow p-6 flex flex-col gap-8">
+            
+            <section class="preview-section flex-grow">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-gray-700 uppercase tracking-wider">Preview do Projeto</h2>
+                    <span class="status-badge">Em progresso</span>
+                </div>
+                
+                <div class="preview-card bg-gray-100 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-300 relative overflow-hidden">
+                    <div class="text-center p-8">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-500 font-medium">Visualização em Tempo Real</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="p-6 bg-white border-t border-gray-100 mb-4">
+            <div id="action-area" class="flex justify-center">
+                <button id="btnFinalizar" class="btn-finalizar w-full py-5 rounded-2xl font-bold text-lg shadow-xl" data-bs-toggle="modal" data-bs-target="#modalProfessor">
+                    Finalizar Aula
+                </button>
+                
+                <button id="btnResgatar" class="btn-resgatar hidden w-full py-5 rounded-2xl text-black font-bold text-lg shadow-xl animate-bounce">
+                    🚀 Resgatar Tokens
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="modalProfessor" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered px-4">
+            <div class="modal-content border-none rounded-3xl shadow-2xl">
+                <div class="modal-header border-none pt-8 px-8">
+                    <h5 class="modal-title text-2xl font-bold text-gray-800">Autenticação do Professor</h5>
+                </div>
+                <div class="modal-body p-8">
+                    <form id="formFinalizar">
+                        <div class="mb-4">
+                            <label class="block text-sm font-semibold text-gray-600 mb-2">Login</label>
+                            <input type="text" class="form-control custom-input py-3 px-4 rounded-xl border-gray-200" placeholder="Usuário" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-600 mb-2">Senha</label>
+                            <input type="password" class="form-control custom-input py-3 px-4 rounded-xl border-gray-200" placeholder="••••••••" required>
+                        </div>
+                        <div class="flex gap-3">
+                            <button type="button" class="btn btn-light flex-grow py-3 rounded-xl font-semibold text-gray-500" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary-modal flex-grow py-3 rounded-xl font-semibold text-black">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lógica de troca de botões após o modal
+        document.getElementById('formFinalizar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Fecha o modal (Bootstrap 5)
+            const modalElement = document.getElementById('modalProfessor');
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            modal.hide();
+
+            // Lógica de transição de botões
+            document.getElementById('btnFinalizar').classList.add('hidden');
+            document.getElementById('btnResgatar').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
