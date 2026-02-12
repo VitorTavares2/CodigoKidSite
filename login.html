@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Profissional | Acesso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="login-container">
+        <form class="login-card" id="loginForm">
+            <div class="login-header">
+                <h1>Bem-vindo</h1>
+                <p>Acesse sua conta para continuar</p>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="exemplo@email.com" autocomplete="email">
+                <span class="error-message" id="emailError">E-mail inválido</span>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="••••••••">
+                <span class="error-message" id="passwordError">A senha é obrigatória</span>
+            </div>
+
+            <button type="submit" class="btn-login" id="btnLogin">Entrar</button>
+            
+            <div id="loginFeedback" class="feedback-message"></div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

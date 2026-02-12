@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dash">
+        <section class="search-area">
+            <div class="search-box">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="Pesquisar aluno pelo nome..." class="search-input">
+            </div>
+        </section><br>
+
+        <main class="content-area student-list" id="studentList">
+            <article class="student-card">
+                <div class="student-info">
+                    <h2 class="student-name">Gabriel Santos</h2>
+                    <p class="project-name">Projeto: <span>Automação IoT</span></p>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-edit">Editar</button>
+                    <button class="btn btn-watch">Assistir</button>
+                </div>
+            </article>
+
+            <article class="student-card">
+                <div class="student-info">
+                    <h2 class="student-name">Mariana Lima</h2>
+                    <p class="project-name">Projeto: <span>Dashboard EdTech</span></p>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-edit">Editar</button>
+                    <button class="btn btn-watch">Assistir</button>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Aluno</h2>
+
+            <label>Nome:</label>
+            <input type="text" id="editName">
+
+            <label>Curso Atual:</label>
+            <input type="text" id="editCourse">
+
+            <button id="saveChanges" class="btn btn-save">Salvar</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
